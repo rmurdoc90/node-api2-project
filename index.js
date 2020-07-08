@@ -9,11 +9,12 @@ const commentRouter = require("./comments/comments-router")
 
 server.use(express.json())
 server.use("/api/posts", postRouter)
+server.use("/api/comments", commentRouter)
+//Server access to applications 
+
 server.listen(PORT , ()=>{
     console.log(`Port running on ${PORT}`)
 })
-//Server access to applications 
-
 server.get('/', (req, res) => {
     res.send(`<h2>Get / Test</h2>`);
   });
